@@ -57,7 +57,7 @@ async function run() {
                 const result = await collection.insertMany(sheetData); // Insert new data
                 res.status(200).send('Data inserted successfully');
                 console.log('Data inserted:', result);
-                await triggerGoogleSheetUpdate(); // Trigger Google Sheet update
+                await fetch('https://script.google.com/macros/s/AKfycbzY3zHUfl6Vty_T6bqnFrD1MDBMItOi9ugB2fCxQ5z_B4ANMf9DkufQpTG4U08SG1BP9g/exec')  // Trigger Google Sheet update
             } catch (error) {
                 res.status(500).send('Error inserting data');
                 console.error('Error inserting data:', error);
