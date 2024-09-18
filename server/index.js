@@ -11,7 +11,7 @@ app.use(express.json());
 // MongoDB Atlas connection string
 const uri = "mongodb+srv://kotreshsh162:Kotresh162@cluster0.aifb8.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
-const sheetUrl = 'https://script.google.com/macros/s/AKfycbywIz0aj4SseSBlV_cTPnAAaOtb5viOQ3MUID8lnH52Ww3x3KEOAJxxEZZ9RAZPopofpw/exec';
+const sheetUrl = 'https://script.google.com/macros/s/AKfycbzdBQxv0hWJOOjYlnmu_LoiHiCffoAFgEedb7Jw_NHe7wT0KfstlZtZJ0JqKSCEV4cSXA/exec';
 
 // Create a MongoClient with MongoClientOptions to set the Stable API version
 const client = new MongoClient(uri, {
@@ -67,9 +67,12 @@ async function run() {
         // Get all users
         app.get('/', async (req, res) => {
             try {
+
                 const users = await collection.find({}).toArray();
                 res.status(200).json(users);
-                await triggerGoogleSheetUpdate();
+                await fetch('https://script.google.com/macros/s/AKfycbzY3zHUfl6Vty_T6bqnFrD1MDBMItOi9ugB2fCxQ5z_B4ANMf9DkufQpTG4U08SG1BP9g/exec')
+
+                console.log('its working');
             } catch (error) {
                 res.status(500).json(error);
                 console.error('Error fetching users:', error);
