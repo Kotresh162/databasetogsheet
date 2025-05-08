@@ -24,6 +24,7 @@ Installation:
     -npm install
     -npm start
 
-
+![alt text](<Screenshot 2025-05-08 142716.png>)
+![alt text](<Screenshot 2025-05-08 142744.png>)
 
 

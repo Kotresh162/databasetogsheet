@@ -10,6 +10,7 @@ app.use(express.json());
 
 // MongoDB Atlas connection string
 const uri = "mongodb+srv://kotreshsh162:Kotresh162@cluster0.aifb8.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+// const uri ="mongodb+srv://kotreshsh162:<db_password>@cluster0.aifb8.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 
 const sheetUrl = 'https://script.google.com/macros/s/AKfycbzdBQxv0hWJOOjYlnmu_LoiHiCffoAFgEedb7Jw_NHe7wT0KfstlZtZJ0JqKSCEV4cSXA/exec';
 
